@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="base.css">
+    <title>Programação em Microinformática - Exercício 09</title>
+</head>
+
+<body>
+    <h1>Exercício 09</h1>
+
+    <form id="form">
+        <input type="number" id="campo1" placeholder="Digite um numero:">
+        <input type="number" id="campo2" placeholder="Digite um numero:">
+
+        <button>Concluir</button>
+    </form>
+
+    <div id="result"></div>
+
+    <script>
+
+        function onSubmit(event) 
+        {
+            event.preventDefault()
+
+            let n1 = parse.Float(campo1.value);
+            let n2 = parse.Float(campo2.value);
+            let maior;
+            let menor;
+
+            if (n1>n2)
+            {
+                maior = n1;
+                menor = n2;
+            }else
+            {
+                maior = n2;
+                menor = n1;
+            }
+
+            result.innerHTML = ''
+
+            for (let i = maior;i >= menor; i--)
+            {
+                result.innerHTML += `${i}`;
+            }
+
+        }
+
+        form.addEventListener('submit', onSubmit);
+    </script>
+</body>
+
+</html>
